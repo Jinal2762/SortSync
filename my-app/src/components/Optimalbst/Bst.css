@@ -1,0 +1,175 @@
+.bst-container {
+  font-family: helvetica;
+  text-align: center;
+  background-image: url('b5.jpg'); /* Replace with the correct path to your image */
+  min-height: 100vh; /* Set the minimum height of the container to fill the viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px; /* Add some padding at the bottom to create some space */
+  font-size: 14px;
+}
+
+.bst-container h1 {
+  margin-top: 20px;
+  color: #25274D;
+}
+.bst-container .container h2 {
+  color:  #25274D;
+}
+
+.bst-container .label {
+  color: #25274D;
+  margin-bottom: 10px;
+}
+
+.bst-container .nokey {
+  margin-top: 10px;
+  width: 40px;
+  padding: 5px;
+  text-align: center;
+  color: black;
+}
+
+.bst-container .keyval {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 50px;
+  padding: 5px;
+  font-size: 14px;
+  color: black;
+  text-align: center;
+}
+
+.bst-container #createbtn {
+  height: 30px;
+  width: 120px;
+  font-size: 14px;
+  border-radius: 10%;
+  background-color: #a1bdd0;
+  margin-top: 10px; /* Adjust the margin as per your preference */
+  margin-bottom: 20px;
+  color: black;
+}
+
+.bst-container .container {
+  margin-top: 20px;
+}
+
+.bst-container .buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bst-container .buttons button {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.bst-container .tree {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bst-container .node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  max-width: max-content;
+}
+
+.node:not(.node--root) .node__element::before {
+  content: '';
+  height: 20px;
+  width: 1px;
+  background-color: #080808;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: -20px;
+}
+
+.bst-container .child-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.bst-container .node--left {
+  margin-right: 50px !important;
+}
+
+.bst-container .node--right {
+  margin-left: 50px !important;
+}
+
+.bst-container .node__element {
+  cursor: pointer;
+  border: 2px solid black;
+  height: 40px;
+  background-color: #a1bdd0;
+  border-radius: 50%;
+  min-width: 60px;
+  max-width: max-content;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 32px;
+  text-align: center;
+  color: #25274D;
+}
+
+.bst-container .node__children {
+  display: flex;
+  padding: 20px 0;
+  border-top: 1px solid black;
+}
+
+.node.node--left {
+  margin-right: 10px;
+}
+
+.node.node--right {
+  margin-left: 10px;
+}
+
+.bst-container .node__element::before,
+.node__children,
+.node__bottom-line {
+  transition: all ease 0.1s;
+}
+
+.bst-container .node__bottom-line {
+  height: 20px;
+  width: 1px;
+  background-color: black;
+}
+
+.node__element:hover {
+  border: 1px solid var(--dark);
+}
+
+.node_element:hover ~ .nodechildren .node_element::before {
+  width: 2px;
+  background-color: var(--dark);
+}
+
+.node_element:hover ~ .node_bottom-line,
+.node_element:hover ~ .nodechildren .node_bottom-line {
+  width: 2px;
+  background-color: var(--dark);
+}
+
+.node_element:hover ~ .node_children,
+.node_element:hover ~ .nodechildren .node_children {
+  border-top-width: 2px;
+  border-color: var(--dark);
+}
